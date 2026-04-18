@@ -19,6 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Khmer font support (optional, but recommended) -->
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- EmailJS -->
@@ -28,6 +30,40 @@
       emailjs.init("eSQ1IpHwJeu-SkhTi");
     })();
   </script>
+  <style>
+    /* Additional style for language switcher */
+    .lang-switch {
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .lang-btn i {
+      font-size: 1rem;
+    }
+    /* Support Khmer font fallback */
+    [lang="km"] {
+      font-family: 'Kantumruy Pro', 'Inter', sans-serif;
+    }
+  </style>
 </head>
 <body>
 
@@ -45,12 +81,20 @@
       <a href="#" class="logo" aria-label="LENG SE Home">LENG<span>SE</span></a>
 
       <nav class="menu" id="menu" aria-label="Main navigation">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" class="active" data-i18n="nav.home">Home</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
+
+      <!-- Language Switcher -->
+      <div class="lang-switch">
+        <button class="lang-btn" id="langToggle" aria-label="Switch language">
+          <i class="fas fa-language"></i>
+          <span id="langLabel">ភាសាខ្មែរ</span>
+        </button>
+      </div>
 
       <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -64,33 +108,33 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-left">
-          <div class="badge">🔧 IT Support · Networking · Electrical</div>
+          <div class="badge" data-i18n="hero.badge">🔧 IT Support · Networking · Electrical</div>
           <h1>
-            IT Support Specialist<br />
-            <span class="grad">Where reliability meets modern infrastructure</span>
+            <span data-i18n="hero.title1">IT Support Specialist</span><br />
+            <span class="grad" data-i18n="hero.title2">Where reliability meets modern infrastructure</span>
           </h1>
-          <p class="sub">
+          <p class="sub" data-i18n="hero.sub">
             Versatile IT professional with over 5 years of hands‑on experience across banking, hospitality, and electrical sectors. 
             I bridge the gap between robust network engineering, system security, and on‑site technical support — delivering 
             stable, secure, and user‑focused IT environments.
           </p>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#contact">Start a conversation</a>
-            <a class="btn ghost" href="#experience">See my track record</a>
+            <a class="btn primary" href="#contact" data-i18n="hero.contactBtn">Start a conversation</a>
+            <a class="btn ghost" href="#experience" data-i18n="hero.expBtn">See my track record</a>
           </div>
           <div class="hero-stats">
             <div class="stat">
               <h3>5+</h3>
-              <p>Years of impact</p>
+              <p data-i18n="hero.stat1">Years of impact</p>
             </div>
             <div class="stat">
-              <h3>IT + Electrical</h3>
-              <p>Dual expertise</p>
+              <h3 data-i18n="hero.stat2Title">IT + Electrical</h3>
+              <p data-i18n="hero.stat2Desc">Dual expertise</p>
             </div>
             <div class="stat">
-              <h3>Bank‑grade</h3>
-              <p>IT support</p>
+              <h3 data-i18n="hero.stat3Title">Bank‑grade</h3>
+              <p data-i18n="hero.stat3Desc">IT support</p>
             </div>
           </div>
         </div>
@@ -101,12 +145,12 @@
             <img class="profile" src="Asset/Profile01.png" alt="LENG SE – IT Support Specialist & Technician" loading="lazy" />
             <div class="profile-info">
               <h4>LENG SE</h4>
-              <p>IT Support · Systems & Network Technician</p>
+              <p data-i18n="hero.profileRole">IT Support · Systems & Network Technician</p>
             </div>
             <div class="chips">
-              <span>⚡ Fast response</span>
-              <span>🎯 Detail‑oriented</span>
-              <span>🛡️ Security‑first</span>
+              <span data-i18n="hero.chip1">⚡ Fast response</span>
+              <span data-i18n="hero.chip2">🎯 Detail‑oriented</span>
+              <span data-i18n="hero.chip3">🛡️ Security‑first</span>
             </div>
           </div>
         </div>
@@ -117,14 +161,14 @@
     <section class="section" id="about">
       <div class="container">
         <div class="section-title reveal">
-          <h2>About Me</h2>
-          <p>A blend of IT precision, networking depth, and electrical know‑how.</p>
+          <h2 data-i18n="about.title">About Me</h2>
+          <p data-i18n="about.sub">A blend of IT precision, networking depth, and electrical know‑how.</p>
         </div>
 
         <div class="about-grid">
           <div class="card reveal">
-            <h3>Who I Am</h3>
-            <p>
+            <h3 data-i18n="about.whoTitle">Who I Am</h3>
+            <p data-i18n="about.whoText">
               I’m LENG SE, an IT Support Specialist currently strengthening banking operations at ABA Bank. 
               My career has been shaped by high‑stakes environments — casinos, hotels, and finance — where I’ve developed 
               a meticulous, security‑conscious approach to system reliability and performance. I thrive on solving 
@@ -133,18 +177,18 @@
           </div>
 
           <div class="card reveal">
-            <h3>What I Deliver</h3>
+            <h3 data-i18n="about.deliverTitle">What I Deliver</h3>
             <ul class="list">
-              <li>✅ Enterprise‑grade IT support & rapid troubleshooting</li>
-              <li>✅ Network configuration & hardening (Cisco, MikroTik, TP‑Link)</li>
-              <li>✅ Hardware lifecycle & printer fleet maintenance</li>
-              <li>✅ Electrical system installation, repair & compliance</li>
+              <li data-i18n="about.deliver1">✅ Enterprise‑grade IT support & rapid troubleshooting</li>
+              <li data-i18n="about.deliver2">✅ Network configuration & hardening (Cisco, MikroTik, TP‑Link)</li>
+              <li data-i18n="about.deliver3">✅ Hardware lifecycle & printer fleet maintenance</li>
+              <li data-i18n="about.deliver4">✅ Electrical system installation, repair & compliance</li>
             </ul>
           </div>
 
           <div class="card reveal">
-            <h3>Professional Focus</h3>
-            <p>
+            <h3 data-i18n="about.focusTitle">Professional Focus</h3>
+            <p data-i18n="about.focusText">
               My mission is to empower organizations with resilient, secure IT ecosystems that minimize downtime 
               and boost productivity. I stay ahead of emerging technologies and continuously refine my skill set 
               to deliver future‑ready solutions with a personal touch.
@@ -158,8 +202,8 @@
     <section class="section alt" id="skills">
       <div class="container">
         <div class="section-title reveal">
-          <h2>Technical Core</h2>
-          <p>Real‑world proficiency — tools I use daily to keep systems running.</p>
+          <h2 data-i18n="skills.title">Technical Core</h2>
+          <p data-i18n="skills.sub">Real‑world proficiency — tools I use daily to keep systems running.</p>
         </div>
 
         <div class="skills-grid">
@@ -170,12 +214,12 @@
             <div class="bar"><div class="bar-fill" style="width:70%"></div></div>
           </div>
           <div class="skill reveal">
-            <p>JavaScript (fundamentals)</p>
+            <p data-i18n="skills.js">JavaScript (fundamentals)</p>
             <span class="skill-percent" data-target="40">40%</span>
             <div class="bar"><div class="bar-fill" style="width:40%"></div></div>
           </div>
           <div class="skill reveal">
-            <p>React (basic)</p>
+            <p data-i18n="skills.react">React (basic)</p>
             <span class="skill-percent" data-target="35">35%</span>
             <div class="bar"><div class="bar-fill" style="width:35%"></div></div>
           </div>
@@ -190,17 +234,17 @@
             <div class="bar"><div class="bar-fill" style="width:65%"></div></div>
           </div>
           <div class="skill reveal">
-            <p>Networking & IT Support</p>
-            <span class="skill-percent" data-target="98">98%</span>
-            <div class="bar"><div class="bar-fill" style="width:98%"></div></div>
-          </div>
-          <div class="skill reveal">
-            <p>Printer & Office Devices</p>
+            <p data-i18n="skills.network">Networking & IT Support</p>
             <span class="skill-percent" data-target="90">90%</span>
             <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
           </div>
           <div class="skill reveal">
-            <p>Electrical Systems</p>
+            <p data-i18n="skills.printer">Printer & Office Devices</p>
+            <span class="skill-percent" data-target="90">90%</span>
+            <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill reveal">
+            <p data-i18n="skills.electrical">Electrical Systems</p>
             <span class="skill-percent" data-target="80">80%</span>
             <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
           </div>
@@ -212,40 +256,40 @@
     <section class="section" id="experience">
       <div class="container">
         <div class="section-title reveal">
-          <h2>Professional Journey</h2>
-          <p>Progressive experience in IT, networking, and technical operations.</p>
+          <h2 data-i18n="exp.title">Professional Journey</h2>
+          <p data-i18n="exp.sub">Progressive experience in IT, networking, and technical operations.</p>
         </div>
 
         <div class="projects-grid">
           <article class="project reveal">
-            <h3>IT Support — ABA Bank</h3>
-            <p class="project-period">2024 – Present</p>
-            <p>
+            <h3 data-i18n="exp.job1Title">IT Support — ABA Bank</h3>
+            <p class="project-period" data-i18n="exp.job1Period">2024 – Present</p>
+            <p data-i18n="exp.job1Desc">
               Provide comprehensive IT support for branch banking operations: workstation imaging, network diagnostics, 
               secure system maintenance, and hardware troubleshooting. Uphold strict security protocols and ensure 
               uninterrupted banking services in a high‑compliance environment.
             </p>
           </article>
           <article class="project reveal">
-            <h3>IT Technician — SV World Hotel & Casino</h3>
-            <p class="project-period">2023 – 2024</p>
-            <p>
+            <h3 data-i18n="exp.job2Title">IT Technician — SV World Hotel & Casino</h3>
+            <p class="project-period" data-i18n="exp.job2Period">2023 – 2024</p>
+            <p data-i18n="exp.job2Desc">
               Maintained critical IT infrastructure across 200+ rooms and the gaming floor. Configured network devices, 
               performed preventive maintenance, and resolved technical incidents swiftly to minimize guest‑facing downtime.
             </p>
           </article>
           <article class="project reveal">
-            <h3>IT Support / Supervisor — Kampong Dewa Casino & Resort</h3>
-            <p class="project-period">2020 – 2022</p>
-            <p>
+            <h3 data-i18n="exp.job3Title">IT Support / Supervisor — Kampong Dewa Casino & Resort</h3>
+            <p class="project-period" data-i18n="exp.job3Period">2020 – 2022</p>
+            <p data-i18n="exp.job3Desc">
               Promoted from IT Support to Supervisor within two years. Led a team of three technicians, oversaw network 
               upgrades, managed helpdesk operations, and ensured 24/7 system availability for casino and resort functions.
             </p>
           </article>
           <article class="project reveal">
-            <h3>Electrician</h3>
-            <p class="project-period">2019 – 2022</p>
-            <p>
+            <h3 data-i18n="exp.job4Title">Electrician</h3>
+            <p class="project-period" data-i18n="exp.job4Period">2019 – 2022</p>
+            <p data-i18n="exp.job4Desc">
               Executed full‑cycle electrical installations, wiring, and maintenance for residential and commercial projects. 
               Ensured compliance with safety standards and delivered reliable power solutions alongside IT‑related cabling tasks.
             </p>
@@ -258,26 +302,26 @@
     <section class="section alt" id="contact">
       <div class="container">
         <div class="section-title reveal">
-          <h2>Let’s connect</h2>
-          <p>Have a project, a technical challenge, or an opportunity? I’m ready to help.</p>
+          <h2 data-i18n="contact.title">Let’s connect</h2>
+          <p data-i18n="contact.sub">Have a project, a technical challenge, or an opportunity? I’m ready to help.</p>
         </div>
 
         <div class="contact-grid">
           <div class="card reveal">
-            <h3>Direct contact</h3>
+            <h3 data-i18n="contact.infoTitle">Direct contact</h3>
             <p><i class="fas fa-envelope" style="margin-right: 8px; color: var(--primary);"></i><b>Email:</b> lengse40@gmail.com</p>
             <p><i class="fas fa-phone-alt" style="margin-right: 8px; color: var(--primary);"></i><b>Phone:</b> +855 85 205 604</p>
-            <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--primary);"></i><b>Location:</b> Sihanoukville, Cambodia</p>
-            <p style="margin-top: 1rem;"><i class="fas fa-clock" style="margin-right: 8px; color: var(--primary);"></i>Available for on‑site support & remote consultation</p>
+            <p><i class="fas fa-map-marker-alt" style="margin-right: 8px; color: var(--primary);"></i><b data-i18n="contact.locationLabel">Location:</b> <span data-i18n="contact.location">Sihanoukville, Cambodia</span></p>
+            <p style="margin-top: 1rem;"><i class="fas fa-clock" style="margin-right: 8px; color: var(--primary);"></i><span data-i18n="contact.availability">Available for on‑site support & remote consultation</span></p>
           </div>
 
           <form class="form card reveal" id="contactForm">
             <div class="row">
-              <input type="text" name="name" placeholder="Your Name" required aria-label="Your name" />
-              <input type="email" name="email" placeholder="Your Email" required aria-label="Your email" />
+              <input type="text" name="name" placeholder="Your Name" required aria-label="Your name" data-i18n-placeholder="contact.namePlaceholder" />
+              <input type="email" name="email" placeholder="Your Email" required aria-label="Your email" data-i18n-placeholder="contact.emailPlaceholder" />
             </div>
-            <textarea name="message" rows="5" placeholder="How can I assist you?" required aria-label="Your message"></textarea>
-            <button class="btn primary" type="submit">Send Message</button>
+            <textarea name="message" rows="5" placeholder="How can I assist you?" required aria-label="Your message" data-i18n-placeholder="contact.msgPlaceholder"></textarea>
+            <button class="btn primary" type="submit" data-i18n="contact.sendBtn">Send Message</button>
             <p class="note" id="note" aria-live="polite"></p>
           </form>
         </div>
@@ -285,10 +329,10 @@
     </section>
   </main>
 
-  <!-- Footer — updated dynamic year & social -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-flex">
-      <p>© <span id="year"></span> LENG SE • IT Support Specialist. All rights reserved.</p>
+      <p>© <span id="year"></span> LENG SE • <span data-i18n="footer.rights">IT Support Specialist. All rights reserved.</span></p>
       <div class="social">
         <a href="https://web.facebook.com/lengse40/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
           <i class="fab fa-facebook-f"></i>
@@ -311,6 +355,227 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
+  <!-- Include main script and language logic -->
   <script src="script.js"></script>
+  <script>
+    (function() {
+      // Language translations
+      const translations = {
+        en: {
+          // Navigation
+          'nav.home': 'Home',
+          'nav.about': 'About',
+          'nav.skills': 'Skills',
+          'nav.experience': 'Experience',
+          'nav.contact': 'Contact',
+          
+          // Hero
+          'hero.badge': '🔧 IT Support · Networking · Electrical',
+          'hero.title1': 'IT Support Specialist',
+          'hero.title2': 'Where reliability meets modern infrastructure',
+          'hero.sub': 'Versatile IT professional with over 5 years of hands‑on experience across banking, hospitality, and electrical sectors. I bridge the gap between robust network engineering, system security, and on‑site technical support — delivering stable, secure, and user‑focused IT environments.',
+          'hero.contactBtn': 'Start a conversation',
+          'hero.expBtn': 'See my track record',
+          'hero.stat1': 'Years of impact',
+          'hero.stat2Title': 'IT + Electrical',
+          'hero.stat2Desc': 'Dual expertise',
+          'hero.stat3Title': 'Bank‑grade',
+          'hero.stat3Desc': 'IT support',
+          'hero.profileRole': 'IT Support · Systems & Network Technician',
+          'hero.chip1': '⚡ Fast response',
+          'hero.chip2': '🎯 Detail‑oriented',
+          'hero.chip3': '🛡️ Security‑first',
+
+          // About
+          'about.title': 'About Me',
+          'about.sub': 'A blend of IT precision, networking depth, and electrical know‑how.',
+          'about.whoTitle': 'Who I Am',
+          'about.whoText': 'I’m LENG SE, an IT Support Specialist currently strengthening banking operations at ABA Bank. My career has been shaped by high‑stakes environments — casinos, hotels, and finance — where I’ve developed a meticulous, security‑conscious approach to system reliability and performance. I thrive on solving complex technical puzzles and optimizing infrastructure for seamless daily operations.',
+          'about.deliverTitle': 'What I Deliver',
+          'about.deliver1': '✅ Enterprise‑grade IT support & rapid troubleshooting',
+          'about.deliver2': '✅ Network configuration & hardening (Cisco, MikroTik, TP‑Link)',
+          'about.deliver3': '✅ Hardware lifecycle & printer fleet maintenance',
+          'about.deliver4': '✅ Electrical system installation, repair & compliance',
+          'about.focusTitle': 'Professional Focus',
+          'about.focusText': 'My mission is to empower organizations with resilient, secure IT ecosystems that minimize downtime and boost productivity. I stay ahead of emerging technologies and continuously refine my skill set to deliver future‑ready solutions with a personal touch.',
+
+          // Skills
+          'skills.title': 'Technical Core',
+          'skills.sub': 'Real‑world proficiency — tools I use daily to keep systems running.',
+          'skills.js': 'JavaScript (fundamentals)',
+          'skills.react': 'React (basic)',
+          'skills.network': 'Networking & IT Support',
+          'skills.printer': 'Printer & Office Devices',
+          'skills.electrical': 'Electrical Systems',
+
+          // Experience
+          'exp.title': 'Professional Journey',
+          'exp.sub': 'Progressive experience in IT, networking, and technical operations.',
+          'exp.job1Title': 'IT Support — ABA Bank',
+          'exp.job1Period': '2024 – Present',
+          'exp.job1Desc': 'Provide comprehensive IT support for branch banking operations: workstation imaging, network diagnostics, secure system maintenance, and hardware troubleshooting. Uphold strict security protocols and ensure uninterrupted banking services in a high‑compliance environment.',
+          'exp.job2Title': 'IT Technician — SV World Hotel & Casino',
+          'exp.job2Period': '2023 – 2024',
+          'exp.job2Desc': 'Maintained critical IT infrastructure across 200+ rooms and the gaming floor. Configured network devices, performed preventive maintenance, and resolved technical incidents swiftly to minimize guest‑facing downtime.',
+          'exp.job3Title': 'IT Support / Supervisor — Kampong Dewa Casino & Resort',
+          'exp.job3Period': '2020 – 2022',
+          'exp.job3Desc': 'Promoted from IT Support to Supervisor within two years. Led a team of three technicians, oversaw network upgrades, managed helpdesk operations, and ensured 24/7 system availability for casino and resort functions.',
+          'exp.job4Title': 'Electrician',
+          'exp.job4Period': '2019 – 2022',
+          'exp.job4Desc': 'Executed full‑cycle electrical installations, wiring, and maintenance for residential and commercial projects. Ensured compliance with safety standards and delivered reliable power solutions alongside IT‑related cabling tasks.',
+
+          // Contact
+          'contact.title': 'Let’s connect',
+          'contact.sub': 'Have a project, a technical challenge, or an opportunity? I’m ready to help.',
+          'contact.infoTitle': 'Direct contact',
+          'contact.locationLabel': 'Location:',
+          'contact.location': 'Sihanoukville, Cambodia',
+          'contact.availability': 'Available for on‑site support & remote consultation',
+          'contact.namePlaceholder': 'Your Name',
+          'contact.emailPlaceholder': 'Your Email',
+          'contact.msgPlaceholder': 'How can I assist you?',
+          'contact.sendBtn': 'Send Message',
+
+          // Footer
+          'footer.rights': 'IT Support Specialist. All rights reserved.'
+        },
+        km: {
+          // Navigation
+          'nav.home': 'ទំព័រដើម',
+          'nav.about': 'អំពីខ្ញុំ',
+          'nav.skills': 'ជំនាញ',
+          'nav.experience': 'បទពិសោធន៍',
+          'nav.contact': 'ទំនាក់ទំនង',
+          
+          // Hero
+          'hero.badge': '🔧 ជំនួយ IT · បណ្តាញ · អគ្គិសនី',
+          'hero.title1': 'អ្នកជំនាញផ្នែកជំនួយ IT',
+          'hero.title2': 'ភាពជឿជាក់ជួបនឹងហេដ្ឋារចនាសម្ព័ន្ធទំនើប',
+          'hero.sub': 'អ្នកជំនាញ IT ដែលមានបទពិសោធន៍ជាង 5 ឆ្នាំ ក្នុងវិស័យធនាគារ បដិសណ្ឋារកិច្ច និងអគ្គិសនី។ ខ្ញុំភ្ជាប់គម្លាតរវាងវិស្វកម្មបណ្តាញរឹងមាំ សុវត្ថិភាពប្រព័ន្ធ និងការគាំទ្របច្ចេកទេសនៅនឹងកន្លែង — ផ្តល់នូវបរិស្ថាន IT ដែលមានស្ថេរភាព សុវត្ថិភាព និងផ្តោតលើអ្នកប្រើប្រាស់។',
+          'hero.contactBtn': 'ចាប់ផ្តើមការសន្ទនា',
+          'hero.expBtn': 'មើលបទពិសោធន៍របស់ខ្ញុំ',
+          'hero.stat1': 'ឆ្នាំនៃឥទ្ធិពល',
+          'hero.stat2Title': 'IT + អគ្គិសនី',
+          'hero.stat2Desc': 'ជំនាញពីរ',
+          'hero.stat3Title': 'កម្រិតធនាគារ',
+          'hero.stat3Desc': 'ការគាំទ្រ IT',
+          'hero.profileRole': 'ជំនួយ IT · អ្នកបច្ចេកទេសប្រព័ន្ធ និងបណ្តាញ',
+          'hero.chip1': '⚡ ឆ្លើយតបរហ័ស',
+          'hero.chip2': '🎯 យកចិត្តទុកដាក់លើព័ត៌មានលម្អិត',
+          'hero.chip3': '🛡️ សុវត្ថិភាពជាអាទិភាព',
+
+          // About
+          'about.title': 'អំពីខ្ញុំ',
+          'about.sub': 'ការលាយបញ្ចូលគ្នានៃភាពជាក់លាក់ IT ជម្រៅបណ្តាញ និងចំណេះដឹងអគ្គិសនី។',
+          'about.whoTitle': 'ខ្ញុំជានរណា',
+          'about.whoText': 'ខ្ញុំឈ្មោះ ឡេង សែ ជាអ្នកជំនាញ IT បច្ចុប្បន្នកំពុងពង្រឹងប្រតិបត្តិការធនាគារនៅ ABA Bank។ អាជីពរបស់ខ្ញុំត្រូវបានបង្កើតឡើងដោយបរិស្ថានដែលមានភាពតានតឹងខ្ពស់ — កាស៊ីណូ សណ្ឋាគារ និងហិរញ្ញវត្ថុ — ដែលខ្ញុំបានអភិវឌ្ឍវិធីសាស្រ្តដែលយកចិត្តទុកដាក់ និងគិតគូរពីសុវត្ថិភាពចំពោះភាពជឿជាក់ និងដំណើរការប្រព័ន្ធ។ ខ្ញុំចូលចិត្តដោះស្រាយបញ្ហាបច្ចេកទេសស្មុគស្មាញ និងធ្វើឱ្យហេដ្ឋារចនាសម្ព័ន្ធប្រសើរឡើងសម្រាប់ប្រតិបត្តិការប្រចាំថ្ងៃ',
+          'about.deliverTitle': 'អ្វីដែលខ្ញុំផ្តល់ជូន',
+          'about.deliver1': '✅ IT Support កម្រិតសហគ្រាស និងការដោះស្រាយបញ្ហារហ័ស',
+          'about.deliver2': '✅ ការកំណត់រចនាសម្ព័ន្ធបណ្តាញ និងការពង្រឹងសុវត្ថិភាព (Cisco, MikroTik, TP‑Link)',
+          'about.deliver3': '✅ វដ្តជីវិតផ្នែករឹង និងការថែទាំក្រុមម៉ាស៊ីនបោះពុម្ព',
+          'about.deliver4': '✅ ការដំឡើងប្រព័ន្ធអគ្គិសនី ការជួសជុល និងការអនុលោមតាមស្តង់ដារ',
+          'about.focusTitle': 'ការផ្តោតអារម្មណ៍វិជ្ជាជីវៈ',
+          'about.focusText': 'បេសកកម្មរបស់ខ្ញុំគឺផ្តល់សិទ្ធិអំណាចដល់អង្គការនានាជាមួយនឹងប្រព័ន្ធ IT ដែលធន់ និងមានសុវត្ថិភាព ដែលកាត់បន្ថយពេលវេលារងចាំ និងបង្កើនផលិតភាព។ ខ្ញុំតាមដានបច្ចេកវិទ្យាថ្មីៗ និងបន្តកែលម្អជំនាញរបស់ខ្ញុំ ដើម្បីផ្តល់នូវដំណោះស្រាយដែលត្រៀមរួចជាស្រេចសម្រាប់អនាគត ជាមួយនឹងការយកចិត្តទុកដាក់ផ្ទាល់ខ្លួន។',
+
+          // Skills
+          'skills.title': 'ស្នូលបច្ចេកទេស',
+          'skills.sub': 'ជំនាញក្នុងពិភពពិត — ឧបករណ៍ដែលខ្ញុំប្រើប្រចាំថ្ងៃដើម្បីរក្សាប្រព័ន្ធឱ្យដំណើរការ។',
+          'skills.js': 'JavaScript (មូលដ្ឋាន)',
+          'skills.react': 'React (មូលដ្ឋាន)',
+          'skills.network': 'បណ្តាញ និងការគាំទ្រ IT',
+          'skills.printer': 'ម៉ាស៊ីនបោះពុម្ព និងឧបករណ៍ការិយាល័យ',
+          'skills.electrical': 'ប្រព័ន្ធអគ្គិសនី',
+
+          // Experience
+          'exp.title': 'ដំណើរអាជីព',
+          'exp.sub': 'បទពិសោធន៍រីកចម្រើនក្នុង IT Networking និងប្រតិបត្តិការបច្ចេកទេស។',
+          'exp.job1Title': 'IT Support — ABA Bank',
+          'exp.job1Period': '២០២៤ – បច្ចុប្បន្ន',
+          'exp.job1Desc': 'ផ្តល់ការគាំទ្រ IT យ៉ាងទូលំទូលាយសម្រាប់ប្រតិបត្តិការធនាគារសាខា៖ ការបង្កើតរូបភាពកុំព្យូទ័រ ការវិនិច្ឆ័យបណ្តាញ ការថែទាំប្រព័ន្ធសុវត្ថិភាព និងការដោះស្រាយបញ្ហាផ្នែករឹង។ រក្សាបាននូវពិធីសារសុវត្ថិភាពតឹងរឹង និងធានាបាននូវសេវាកម្មធនាគារដែលមិនមានការរំខាននៅក្នុងបរិស្ថានដែលមានការអនុលោមតាមច្បាប់ខ្ពស់។',
+          'exp.job2Title': 'អ្នកបច្ចេកទេស IT — SV World Hotel & Casino',
+          'exp.job2Period': '២០២៣ – ២០២៤',
+          'exp.job2Desc': 'ថែរក្សាហេដ្ឋារចនាសម្ព័ន្ធ IT សំខាន់ៗនៅទូទាំងបន្ទប់ជាង ២០០ និងជាន់ហ្គេម។ កំណត់រចនាសម្ព័ន្ធឧបករណ៍បណ្តាញ អនុវត្តការថែទាំបង្ការ និងដោះស្រាយបញ្ហាបច្ចេកទេសយ៉ាងឆាប់រហ័ស ដើម្បីកាត់បន្ថយពេលវេលារងចាំដែលប៉ះពាល់ដល់ភ្ញៀវ។',
+          'exp.job3Title': 'ជំនួយ IT / អ្នកគ្រប់គ្រង — Kampong Dewa Casino & Resort',
+          'exp.job3Period': '២០២០ – ២០២២',
+          'exp.job3Desc': 'ត្រូវបានដំឡើងពី IT Support ទៅជា Supperbisor ក្នុងរយៈពេលពីរឆ្នាំ។ ដឹកនាំក្រុមអ្នកបច្ចេកទេសបីនាក់ ត្រួតពិនិត្យការធ្វើឱ្យប្រសើរឡើងបណ្តាញ គ្រប់គ្រងប្រតិបត្តិការតុជំនួយ និងធានាបាននូវភាពអាចរកបាននៃប្រព័ន្ធ ២៤/៧ សម្រាប់មុខងារកាស៊ីណូ និងរមណីយដ្ឋាន។',
+          'exp.job4Title': 'ជាងអគ្គិសនី',
+          'exp.job4Period': '២០១៩ – ២០២២',
+          'exp.job4Desc': 'អនុវត្តការដំឡើងអគ្គិសនីពេញវដ្ត ខ្សែភ្លើង និងការថែទាំសម្រាប់គម្រោងលំនៅដ្ឋាន និងពាណិជ្ជកម្ម។ ធានាបាននូវការអនុលោមតាមស្តង់ដារសុវត្ថិភាព និងផ្តល់នូវដំណោះស្រាយថាមពលដែលអាចទុកចិត្តបាន រួមជាមួយនឹងការងារខ្សែកាបដែលទាក់ទងនឹង IT ។',
+
+          // Contact
+          'contact.title': 'ទំនាក់ទំនង',
+          'contact.sub': 'មានគម្រោង បញ្ហាប្រឈមបច្ចេកទេស ឬឱកាសមែនទេ? ខ្ញុំរីករាយនឹងជួយ។',
+          'contact.infoTitle': 'ទំនាក់ទំនងផ្ទាល់',
+          'contact.locationLabel': 'ទីតាំង៖',
+          'contact.location': 'ខេត្តព្រះសីហនុ ប្រទេសកម្ពុជា',
+          'contact.availability': 'អាចរកបានសម្រាប់ការគាំទ្រនៅនឹងកន្លែង និងការពិគ្រោះយោបល់ពីចម្ងាយ',
+          'contact.namePlaceholder': 'ឈ្មោះរបស់អ្នក',
+          'contact.emailPlaceholder': 'អ៊ីមែលរបស់អ្នក',
+          'contact.msgPlaceholder': 'តើខ្ញុំអាចជួយអ្នកយ៉ាងដូចម្តេច?',
+          'contact.sendBtn': 'ផ្ញើសារ',
+
+          // Footer
+          'footer.rights': 'អ្នកជំនាញផ្នែកជំនួយ IT ។ រក្សាសិទ្ធិគ្រប់យ៉ាង។'
+        }
+      };
+
+      let currentLang = 'en';
+
+      function applyLanguage(lang) {
+        document.documentElement.lang = lang;
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+              el.placeholder = translations[lang][key];
+            } else {
+              el.textContent = translations[lang][key];
+            }
+          }
+        });
+
+        // Handle placeholder attributes separately
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (translations[lang] && translations[lang][key]) {
+            el.placeholder = translations[lang][key];
+          }
+        });
+
+        // Update toggle button label
+        const langLabel = document.getElementById('langLabel');
+        if (lang === 'en') {
+          langLabel.textContent = 'ភាសាខ្មែរ';
+        } else {
+          langLabel.textContent = 'English';
+        }
+
+        // Store preference
+        localStorage.setItem('preferredLang', lang);
+        currentLang = lang;
+      }
+
+      // Toggle function
+      function toggleLanguage() {
+        const newLang = currentLang === 'en' ? 'km' : 'en';
+        applyLanguage(newLang);
+      }
+
+      // Initialize
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        applyLanguage(savedLang);
+
+        const toggleBtn = document.getElementById('langToggle');
+        if (toggleBtn) {
+          toggleBtn.addEventListener('click', toggleLanguage);
+        }
+
+        // Update year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+      });
+    })();
+  </script>
 </body>
 </html>
