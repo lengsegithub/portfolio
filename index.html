@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <!-- Improved Khmer font stack: Kantumruy Pro + system fallbacks -->
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Khmer:wght@300;400;500;600;700&family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Khmer:wght@300;400;500;600;700&family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- EmailJS -->
@@ -363,11 +363,11 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- Include main script and language logic -->
+  <!-- Include main script -->
   <script src="script.js"></script>
   <script>
     (function() {
-      // Language translations with improved Khmer (technical terms remain English)
+      // Language translations with corrected Khmer (technical terms remain English)
       const translations = {
         en: {
           // Navigation
@@ -447,166 +447,151 @@
           // Footer
           'footer.rights': 'IT Support Specialist. All rights reserved.'
         },
-     km: {
-  // Navigation
-  'nav.home': 'ទំព័រដើម',
-  'nav.about': 'អំពីខ្ញុំ',
-  'nav.skills': 'ជំនាញ',
-  'nav.experience': 'បទពិសោធន៍',
-  'nav.contact': 'ទំនាក់ទំនង',
+        km: {
+          // Navigation
+          'nav.home': 'ទំព័រដើម',
+          'nav.about': 'អំពីខ្ញុំ',
+          'nav.skills': 'ជំនាញ',
+          'nav.experience': 'បទពិសោធន៍',
+          'nav.contact': 'ទំនាក់ទំនង',
 
-  // Hero
-  'hero.badge': '🔧 IT Support · Networking · Electrical',
-  'hero.title1': 'អ្នកជំនាញ IT Support',
-  'hero.title2': 'បង្កើតប្រព័ន្ធដែលមានស្ថេរភាព និងទំនើប',
-  'hero.sub': 'ខ្ញុំជាអ្នកជំនាញ IT ដែលមានបទពិសោធន៍ជាង ៥ ឆ្នាំ ក្នុងវិស័យធនាគារ សណ្ឋាគារ និងអគ្គិសនី។ ខ្ញុំមានជំនាញក្នុងការគ្រប់គ្រងបណ្តាញ (Networking), សុវត្ថិភាពប្រព័ន្ធ (System Security) និងការជួយដោះស្រាយបញ្ហាបច្ចេកទេស ដើម្បីធានាថាប្រព័ន្ធដំណើរការយ៉ាងរលូន និងមានប្រសិទ្ធភាព។',
-  'hero.contactBtn': 'ទំនាក់ទំនងមកខ្ញុំ',
-  'hero.expBtn': 'មើលបទពិសោធន៍',
-  'hero.stat1': 'ឆ្នាំបទពិសោធន៍',
-  'hero.stat2Title': 'IT + Electrical',
-  'hero.stat2Desc': 'ជំនាញរួម',
-  'hero.stat3Title': 'Professional',
-  'hero.stat3Desc': 'IT Support',
-  'hero.profileRole': 'IT Support · Systems & Network Technician',
-  'hero.chip1': '⚡ ដោះស្រាយរហ័ស',
-  'hero.chip2': '🎯 យកចិត្តទុកដាក់លម្អិត',
-  'hero.chip3': '🛡️ សុវត្ថិភាពជាមុន',
+          // Hero
+          'hero.badge': '🔧 IT Support · Networking · Electrical',
+          'hero.title1': 'អ្នកជំនាញ IT Support',
+          'hero.title2': 'បង្កើតប្រព័ន្ធដែលមានស្ថេរភាព និងទំនើប',
+          'hero.sub': 'ខ្ញុំជាអ្នកជំនាញ IT ដែលមានបទពិសោធន៍ជាង ៥ ឆ្នាំ ក្នុងវិស័យធនាគារ សណ្ឋាគារ និងអគ្គិសនី។ ខ្ញុំមានជំនាញក្នុងការគ្រប់គ្រងបណ្តាញ (Networking), សុវត្ថិភាពប្រព័ន្ធ (System Security) និងការជួយដោះស្រាយបញ្ហាបច្ចេកទេស ដើម្បីធានាថាប្រព័ន្ធដំណើរការយ៉ាងរលូន និងមានប្រសិទ្ធភាព។',
+          'hero.contactBtn': 'ទំនាក់ទំនងមកខ្ញុំ',
+          'hero.expBtn': 'មើលបទពិសោធន៍',
+          'hero.stat1': 'ឆ្នាំបទពិសោធន៍',
+          'hero.stat2Title': 'IT + Electrical',
+          'hero.stat2Desc': 'ជំនាញរួម',
+          'hero.stat3Title': 'Professional',
+          'hero.stat3Desc': 'IT Support',
+          'hero.profileRole': 'IT Support · Systems & Network Technician',
+          'hero.chip1': '⚡ ដោះស្រាយរហ័ស',
+          'hero.chip2': '🎯 យកចិត្តទុកដាក់លម្អិត',
+          'hero.chip3': '🛡️ សុវត្ថិភាពជាមុន',
 
-  // About
-  'about.title': 'អំពីខ្ញុំ',
-  'about.sub': 'ជំនាញរួមបញ្ចូលរវាង IT, Network និងអគ្គិសនី',
-  'about.whoTitle': 'ខ្ញុំជានរណា',
-  'about.whoText': 'ខ្ញុំឈ្មោះ ឡេង សែ ជាអ្នកជំនាញ IT Support បច្ចុប្បន្នកំពុងធ្វើការនៅ ABA Bank។ ខ្ញុំមានបទពិសោធន៍ការងារនៅក្នុងបរិស្ថានដែលមានសម្ពាធខ្ពស់ដូចជា កាស៊ីណូ សណ្ឋាគារ និងវិស័យហិរញ្ញវត្ថុ ដែលជួយអោយខ្ញុំអភិវឌ្ឍជំនាញក្នុងការធានាស្ថេរភាព និងសុវត្ថិភាពប្រព័ន្ធ។ ខ្ញុំចូលចិត្តដោះស្រាយបញ្ហាបច្ចេកទេស និងធ្វើអោយប្រព័ន្ធដំណើរការបានល្អប្រសើរឡើង។',
-  
-  'about.deliverTitle': 'អ្វីដែលខ្ញុំអាចជួយបាន',
-  'about.deliver1': '✅ ជំនួយ IT Support និងដោះស្រាយបញ្ហាបច្ចេកទេស',
-  'about.deliver2': '✅ កំណត់ និងគ្រប់គ្រង Network (Cisco, MikroTik, TP-Link)',
-  'about.deliver3': '✅ ថែទាំ Hardware និងឧបករណ៍ការិយាល័យ',
-  'about.deliver4': '✅ ដំឡើង និងជួសជុលប្រព័ន្ធអគ្គិសនី',
-  
-  'about.focusTitle': 'គោលបំណងការងារ',
-  'about.focusText': 'ខ្ញុំមានបំណងបង្កើតប្រព័ន្ធ IT ដែលមានស្ថេរភាព សុវត្ថិភាព និងអាចទុកចិត្តបាន ដើម្បីកាត់បន្ថយការរអាក់រអួល និងជួយបង្កើនប្រសិទ្ធភាពការងារ។ ខ្ញុំក៏បន្តរៀនបច្ចេកវិទ្យាថ្មីៗ ដើម្បីអភិវឌ្ឍខ្លួនឯងជានិច្ច។',
+          // About
+          'about.title': 'អំពីខ្ញុំ',
+          'about.sub': 'ជំនាញរួមបញ្ចូលរវាង IT, Network និងអគ្គិសនី',
+          'about.whoTitle': 'ខ្ញុំជានរណា',
+          'about.whoText': 'ខ្ញុំឈ្មោះ ឡេង សែ ជាអ្នកជំនាញ IT Support បច្ចុប្បន្នកំពុងធ្វើការនៅ ABA Bank។ ខ្ញុំមានបទពិសោធន៍ការងារនៅក្នុងបរិស្ថានដែលមានសម្ពាធខ្ពស់ដូចជា កាស៊ីណូ សណ្ឋាគារ និងវិស័យហិរញ្ញវត្ថុ ដែលជួយអោយខ្ញុំអភិវឌ្ឍជំនាញក្នុងការធានាស្ថេរភាព និងសុវត្ថិភាពប្រព័ន្ធ។ ខ្ញុំចូលចិត្តដោះស្រាយបញ្ហាបច្ចេកទេស និងធ្វើអោយប្រព័ន្ធដំណើរការបានល្អប្រសើរឡើង។',
+          'about.deliverTitle': 'អ្វីដែលខ្ញុំអាចជួយបាន',
+          'about.deliver1': '✅ ជំនួយ IT Support និងដោះស្រាយបញ្ហាបច្ចេកទេស',
+          'about.deliver2': '✅ កំណត់ និងគ្រប់គ្រង Network (Cisco, MikroTik, TP-Link)',
+          'about.deliver3': '✅ ថែទាំ Hardware និងឧបករណ៍ការិយាល័យ',
+          'about.deliver4': '✅ ដំឡើង និងជួសជុលប្រព័ន្ធអគ្គិសនី',
+          'about.focusTitle': 'គោលបំណងការងារ',
+          'about.focusText': 'ខ្ញុំមានបំណងបង្កើតប្រព័ន្ធ IT ដែលមានស្ថេរភាព សុវត្ថិភាព និងអាចទុកចិត្តបាន ដើម្បីកាត់បន្ថយការរអាក់រអួល និងជួយបង្កើនប្រសិទ្ធភាពការងារ។ ខ្ញុំក៏បន្តរៀនបច្ចេកវិទ្យាថ្មីៗ ដើម្បីអភិវឌ្ឍខ្លួនឯងជានិច្ច។',
 
-  // Skills
-  'skills.title': 'ជំនាញ',
-  'skills.sub': 'ជំនាញដែលខ្ញុំប្រើប្រាស់ក្នុងការងារប្រចាំថ្ងៃ',
-  'skills.js': 'JavaScript (មូលដ្ឋាន)',
-  'skills.react': 'React (មូលដ្ឋាន)',
-  'skills.network': 'Networking & IT Support',
-  'skills.printer': 'Printer & Office Devices',
-  'skills.electrical': 'Electrical Systems',
+          // Skills
+          'skills.title': 'ជំនាញ',
+          'skills.sub': 'ជំនាញដែលខ្ញុំប្រើប្រាស់ក្នុងការងារប្រចាំថ្ងៃ',
+          'skills.js': 'JavaScript (មូលដ្ឋាន)',
+          'skills.react': 'React (មូលដ្ឋាន)',
+          'skills.network': 'Networking & IT Support',
+          'skills.printer': 'Printer & Office Devices',
+          'skills.electrical': 'Electrical Systems',
 
-  // Experience
-  'exp.title': 'បទពិសោធន៍',
-  'exp.sub': 'បទពិសោធន៍ការងារផ្នែក IT និងបច្ចេកវិទ្យា',
-  
-  'exp.job1Title': 'IT Support — ABA Bank',
-  'exp.job1Period': '២០២៤ – បច្ចុប្បន្ន',
-  'exp.job1Desc': 'ផ្ដល់ជំនួយ IT សម្រាប់ប្រតិបត្តិការធនាគារ រួមមានការដំឡើងប្រព័ន្ធ ការដោះស្រាយបញ្ហាបណ្តាញ និងការថែទាំសុវត្ថិភាពប្រព័ន្ធ។ ធានាថាប្រព័ន្ធដំណើរការបានយ៉ាងរលូន និងមានសុវត្ថិភាព។',
+          // Experience
+          'exp.title': 'បទពិសោធន៍',
+          'exp.sub': 'បទពិសោធន៍ការងារផ្នែក IT និងបច្ចេកវិទ្យា',
+          'exp.job1Title': 'IT Support — ABA Bank',
+          'exp.job1Period': '២០២៤ – បច្ចុប្បន្ន',
+          'exp.job1Desc': 'ផ្ដល់ជំនួយ IT សម្រាប់ប្រតិបត្តិការធនាគារ រួមមានការដំឡើងប្រព័ន្ធ ការដោះស្រាយបញ្ហាបណ្តាញ និងការថែទាំសុវត្ថិភាពប្រព័ន្ធ។ ធានាថាប្រព័ន្ធដំណើរការបានយ៉ាងរលូន និងមានសុវត្ថិភាព។',
+          'exp.job2Title': 'IT Technician — SV World Hotel & Casino',
+          'exp.job2Period': '២០២៣ – ២០២៤',
+          'exp.job2Desc': 'ថែទាំ និងគ្រប់គ្រងប្រព័ន្ធ IT សម្រាប់បន្ទប់ និងតំបន់ប្រតិបត្តិការ។ ដោះស្រាយបញ្ហាបច្ចេកទេសយ៉ាងឆាប់រហ័ស ដើម្បីកាត់បន្ថយការរអាក់រអួល។',
+          'exp.job3Title': 'IT Support / Supervisor — Kampong Dewa Casino & Resort',
+          'exp.job3Period': '២០២០ – ២០២២',
+          'exp.job3Desc': 'IT Support បានឡើងតំណែងជា Supervisor ក្នុងរយៈពេល២ឆ្នាំ និងដឹកនាំក្រុមការងារ។ គ្រប់គ្រងការងារ IT ប្រចាំថ្ងៃ និងធានាបានប្រព័ន្ធដំណើរការ ២៤/៧។',
+          'exp.job4Title': 'Electrician',
+          'exp.job4Period': '២០១៩ – ២០២២',
+          'exp.job4Desc': 'ដំឡើង និងថែទាំប្រព័ន្ធអគ្គិសនីសម្រាប់គម្រោងលំនៅដ្ឋាន និងអាជីវកម្ម ដោយគោរពតាមស្តង់ដារ និងសុវត្ថិភាព។',
 
-  'exp.job2Title': 'IT Technician — SV World Hotel & Casino',
-  'exp.job2Period': '២០២៣ – ២០២៤',
-  'exp.job2Desc': 'ថែទាំ និងគ្រប់គ្រងប្រព័ន្ធ IT សម្រាប់បន្ទប់ និងតំបន់ប្រតិបត្តិការ។ ដោះស្រាយបញ្ហាបច្ចេកទេសយ៉ាងឆាប់រហ័ស ដើម្បីកាត់បន្ថយការរអាក់រអួល។',
+          // Contact
+          'contact.title': 'ទំនាក់ទំនង',
+          'contact.sub': 'ប្រសិនបើអ្នកមានការងារ ឬបញ្ហាបច្ចេកទេស ខ្ញុំរីករាយជួយអ្នក',
+          'contact.infoTitle': 'ព័ត៌មានទំនាក់ទំនង',
+          'contact.locationLabel': 'ទីតាំង៖',
+          'contact.location': 'ប្រទេសកម្ពុជា',
+          'contact.availability': 'អាចធ្វើការនៅនឹងកន្លែង និងពីចម្ងាយ',
+          'contact.namePlaceholder': 'ឈ្មោះ',
+          'contact.emailPlaceholder': 'អ៊ីមែល',
+          'contact.msgPlaceholder': 'សូមបញ្ចូលសារ...',
+          'contact.sendBtn': 'ផ្ញើសារ',
 
-  'exp.job3Title': 'IT Support / Supervisor — Kampong Dewa Casino & Resort',
-  'exp.job3Period': '២០២០ – ២០២២',
-  'exp.job3Desc': 'បានឡើងតំណែងជា Supervisor និងដឹកនាំក្រុមការងារ។ គ្រប់គ្រងការងារ IT ប្រចាំថ្ងៃ និងធានាបានប្រព័ន្ធដំណើរការ ២៤/៧។',
+          // Footer
+          'footer.rights': 'អ្នកជំនាញ IT Support | រក្សាសិទ្ធិគ្រប់យ៉ាង'
+        }
+      };
 
-  'exp.job4Title': 'Electrician',
-  'exp.job4Period': '២០១៩ – ២០២២',
-  'exp.job4Desc': 'ដំឡើង និងថែទាំប្រព័ន្ធអគ្គិសនីសម្រាប់គម្រោងលំនៅដ្ឋាន និងអាជីវកម្ម ដោយគោរពតាមស្តង់ដារ និងសុវត្ថិភាព។',
+      let currentLang = 'en';
 
-  // Contact
-  'contact.title': 'ទំនាក់ទំនង',
-  'contact.sub': 'ប្រសិនបើអ្នកមានការងារ ឬបញ្ហាបច្ចេកទេស ខ្ញុំរីករាយជួយអ្នក',
-  'contact.infoTitle': 'ព័ត៌មានទំនាក់ទំនង',
-  'contact.locationLabel': 'ទីតាំង៖',
-  'contact.location': 'ប្រទេសកម្ពុជា',
-  'contact.availability': 'អាចធ្វើការនៅនឹងកន្លែង និងពីចម្ងាយ',
-  'contact.namePlaceholder': 'ឈ្មោះ',
-  'contact.emailPlaceholder': 'អ៊ីមែល',
-  'contact.msgPlaceholder': 'សូមបញ្ចូលសារ...',
-  'contact.sendBtn': 'ផ្ញើសារ',
+      function applyLanguage(lang) {
+        // 1. Set HTML language
+        document.documentElement.lang = lang;
 
-  // Footer
-  'footer.rights': 'អ្នកជំនាញ IT Support | រក្សាសិទ្ធិគ្រប់យ៉ាង'
-}
-    let currentLang = 'en';
+        // 2. Font switch
+        document.body.style.fontFamily = (lang === 'km')
+          ? "'Noto Sans Khmer', 'Kantumruy Pro', sans-serif"
+          : "Inter, system-ui, Arial, sans-serif";
 
-function applyLanguage(lang) {
-  // 1. Set HTML language
-  document.documentElement.lang = lang;
+        // 3. Text translation
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
 
-  // 2. Font switch
-  document.body.style.fontFamily = (lang === 'km')
-    ? "'Noto Sans Khmer', 'Kantumruy Pro', sans-serif"
-    : "Inter, system-ui, Arial, sans-serif";
+        // 4. Placeholder translation
+        const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+        placeholders.forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (translations[lang] && translations[lang][key]) {
+            el.placeholder = translations[lang][key];
+          }
+        });
 
-  // 3. Text translation
-  const elements = document.querySelectorAll('[data-i18n]');
-  elements.forEach(el => {
-    const key = el.getAttribute('data-i18n');
+        // 5. Update button label
+        const langLabel = document.getElementById('langLabel');
+        if (langLabel) {
+          langLabel.textContent = (lang === 'en') ? 'ភាសាខ្មែរ' : 'English';
+        }
 
-    if (translations[lang] && translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
+        // 6. Save language
+        localStorage.setItem('preferredLang', lang);
 
-  // 4. Placeholder translation
-  const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
-  placeholders.forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
+        // 7. Update current language
+        currentLang = lang;
+      }
 
-    if (translations[lang] && translations[lang][key]) {
-      el.placeholder = translations[lang][key];
-    }
-  });
+      function toggleLanguage() {
+        const newLang = (currentLang === 'en') ? 'km' : 'en';
+        applyLanguage(newLang);
+      }
 
-  // 5. Update button label
-  const langLabel = document.getElementById('langLabel');
-  if (langLabel) {
-    langLabel.textContent = (lang === 'en') ? 'ភាសាខ្មែរ' : 'English';
-  }
+      // Initialize on DOM ready
+      document.addEventListener('DOMContentLoaded', () => {
+        // Load saved language
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        applyLanguage(savedLang);
 
-  // 6. Save language
-  localStorage.setItem('preferredLang', lang);
+        // Button click
+        const toggleBtn = document.getElementById('langToggle');
+        if (toggleBtn) {
+          toggleBtn.addEventListener('click', toggleLanguage);
+        }
 
-  // 7. Update current language
-  currentLang = lang;
-}
-
-
-// ==========================
-// TOGGLE LANGUAGE
-// ==========================
-function toggleLanguage() {
-  const newLang = (currentLang === 'en') ? 'km' : 'en';
-  applyLanguage(newLang);
-}
-
-
-// ==========================
-// INIT APP
-// ==========================
-document.addEventListener('DOMContentLoaded', () => {
-
-  // Load saved language
-  const savedLang = localStorage.getItem('preferredLang') || 'en';
-  applyLanguage(savedLang);
-
-  // Button click
-  const toggleBtn = document.getElementById('langToggle');
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', toggleLanguage);
-  }
-
-  // Footer year
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-
-});
+        // Footer year
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+        }
+      });
     })();
   </script>
 </body>
