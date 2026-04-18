@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Khmer font support (optional, but recommended) -->
+  <!-- Improved Khmer font stack: Kantumruy Pro + system fallbacks -->
   <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -31,7 +31,7 @@
     })();
   </script>
   <style>
-    /* Additional style for language switcher */
+    /* Language switcher styling */
     .lang-switch {
       margin-left: 20px;
       display: flex;
@@ -59,9 +59,25 @@
     .lang-btn i {
       font-size: 1rem;
     }
-    /* Support Khmer font fallback */
+
+    /* Enhanced Khmer font rendering */
     [lang="km"] {
-      font-family: 'Kantumruy Pro', 'Inter', sans-serif;
+      font-family: 'Kantumruy Pro', 'Khmer OS', 'Battambang', 'Leelawadee UI', 'Inter', sans-serif;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* Ensure technical terms remain clear */
+    [lang="km"] .skill p,
+    [lang="km"] .badge,
+    [lang="km"] .chips span {
+      letter-spacing: 0.02em;
+    }
+
+    /* Optional smooth rendering */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
   </style>
 </head>
@@ -207,7 +223,6 @@
         </div>
 
         <div class="skills-grid">
-          <!-- Skill items: data-target matches displayed % and bar width for consistency -->
           <div class="skill reveal">
             <p>HTML / CSS</p>
             <span class="skill-percent" data-target="70">70%</span>
@@ -359,7 +374,7 @@
   <script src="script.js"></script>
   <script>
     (function() {
-      // Language translations
+      // Language translations with improved Khmer (technical terms remain English)
       const translations = {
         en: {
           // Navigation
@@ -439,86 +454,90 @@
           // Footer
           'footer.rights': 'IT Support Specialist. All rights reserved.'
         },
-        km: {
-          // Navigation
-          'nav.home': 'ទំព័រដើម',
-          'nav.about': 'អំពីខ្ញុំ',
-          'nav.skills': 'ជំនាញ',
-          'nav.experience': 'បទពិសោធន៍',
-          'nav.contact': 'ទំនាក់ទំនង',
-          
-          // Hero
-          'hero.badge': '🔧 ជំនួយ IT · បណ្តាញ · អគ្គិសនី',
-          'hero.title1': 'អ្នកជំនាញផ្នែកជំនួយ IT',
-          'hero.title2': 'ភាពជឿជាក់ជួបនឹងហេដ្ឋារចនាសម្ព័ន្ធទំនើប',
-          'hero.sub': 'អ្នកជំនាញ IT ដែលមានបទពិសោធន៍ជាង 5 ឆ្នាំ ក្នុងវិស័យធនាគារ បដិសណ្ឋារកិច្ច និងអគ្គិសនី។ ខ្ញុំភ្ជាប់គម្លាតរវាងវិស្វកម្មបណ្តាញរឹងមាំ សុវត្ថិភាពប្រព័ន្ធ និងការគាំទ្របច្ចេកទេសនៅនឹងកន្លែង — ផ្តល់នូវបរិស្ថាន IT ដែលមានស្ថេរភាព សុវត្ថិភាព និងផ្តោតលើអ្នកប្រើប្រាស់។',
-          'hero.contactBtn': 'ចាប់ផ្តើមការសន្ទនា',
-          'hero.expBtn': 'មើលបទពិសោធន៍របស់ខ្ញុំ',
-          'hero.stat1': 'ឆ្នាំនៃឥទ្ធិពល',
-          'hero.stat2Title': 'IT + អគ្គិសនី',
-          'hero.stat2Desc': 'ជំនាញពីរ',
-          'hero.stat3Title': 'កម្រិតធនាគារ',
-          'hero.stat3Desc': 'ការគាំទ្រ IT',
-          'hero.profileRole': 'ជំនួយ IT · អ្នកបច្ចេកទេសប្រព័ន្ធ និងបណ្តាញ',
-          'hero.chip1': '⚡ ឆ្លើយតបរហ័ស',
-          'hero.chip2': '🎯 យកចិត្តទុកដាក់លើព័ត៌មានលម្អិត',
-          'hero.chip3': '🛡️ សុវត្ថិភាពជាអាទិភាព',
+       km: {
+  // Navigation
+  'nav.home': 'ទំព័រដើម',
+  'nav.about': 'អំពីខ្ញុំ',
+  'nav.skills': 'ជំនាញបច្ចេកទេស',
+  'nav.experience': 'បទពិសោធន៍ការងារ',
+  'nav.contact': 'ទំនាក់ទំនង',
 
-          // About
-          'about.title': 'អំពីខ្ញុំ',
-          'about.sub': 'ការលាយបញ្ចូលគ្នានៃភាពជាក់លាក់ IT ជម្រៅបណ្តាញ និងចំណេះដឹងអគ្គិសនី។',
-          'about.whoTitle': 'ខ្ញុំជានរណា',
-          'about.whoText': 'ខ្ញុំឈ្មោះ ឡេង សែ ជាអ្នកជំនាញ IT បច្ចុប្បន្នកំពុងពង្រឹងប្រតិបត្តិការធនាគារនៅ ABA Bank។ អាជីពរបស់ខ្ញុំត្រូវបានបង្កើតឡើងដោយបរិស្ថានដែលមានភាពតានតឹងខ្ពស់ — កាស៊ីណូ សណ្ឋាគារ និងហិរញ្ញវត្ថុ — ដែលខ្ញុំបានអភិវឌ្ឍវិធីសាស្រ្តដែលយកចិត្តទុកដាក់ និងគិតគូរពីសុវត្ថិភាពចំពោះភាពជឿជាក់ និងដំណើរការប្រព័ន្ធ។ ខ្ញុំចូលចិត្តដោះស្រាយបញ្ហាបច្ចេកទេសស្មុគស្មាញ និងធ្វើឱ្យហេដ្ឋារចនាសម្ព័ន្ធប្រសើរឡើងសម្រាប់ប្រតិបត្តិការប្រចាំថ្ងៃ',
-          'about.deliverTitle': 'អ្វីដែលខ្ញុំផ្តល់ជូន',
-          'about.deliver1': '✅ IT Support កម្រិតសហគ្រាស និងការដោះស្រាយបញ្ហារហ័ស',
-          'about.deliver2': '✅ ការកំណត់រចនាសម្ព័ន្ធបណ្តាញ និងការពង្រឹងសុវត្ថិភាព (Cisco, MikroTik, TP‑Link)',
-          'about.deliver3': '✅ វដ្តជីវិតផ្នែករឹង និងការថែទាំក្រុមម៉ាស៊ីនបោះពុម្ព',
-          'about.deliver4': '✅ ការដំឡើងប្រព័ន្ធអគ្គិសនី ការជួសជុល និងការអនុលោមតាមស្តង់ដារ',
-          'about.focusTitle': 'ការផ្តោតអារម្មណ៍វិជ្ជាជីវៈ',
-          'about.focusText': 'បេសកកម្មរបស់ខ្ញុំគឺផ្តល់សិទ្ធិអំណាចដល់អង្គការនានាជាមួយនឹងប្រព័ន្ធ IT ដែលធន់ និងមានសុវត្ថិភាព ដែលកាត់បន្ថយពេលវេលារងចាំ និងបង្កើនផលិតភាព។ ខ្ញុំតាមដានបច្ចេកវិទ្យាថ្មីៗ និងបន្តកែលម្អជំនាញរបស់ខ្ញុំ ដើម្បីផ្តល់នូវដំណោះស្រាយដែលត្រៀមរួចជាស្រេចសម្រាប់អនាគត ជាមួយនឹងការយកចិត្តទុកដាក់ផ្ទាល់ខ្លួន។',
+  // Hero
+  'hero.badge': '🔧 IT Support · Networking · Electrical',
+  'hero.title1': 'អ្នកជំនាញ IT Support',
+  'hero.title2': 'ភាពជឿជាក់រួមបញ្ចូលជាមួយហេដ្ឋារចនាសម្ព័ន្ធទំនើប',
+  'hero.sub': 'អ្នកជំនាញ IT ដែលមានបទពិសោធន៍ជាង ៥ ឆ្នាំ ក្នុងវិស័យធនាគារ បដិសណ្ឋារកិច្ច និងអគ្គិសនី។ ខ្ញុំមានសមត្ថភាពក្នុងការរួមបញ្ចូល Network Engineering, System Security និង Technical Support ដើម្បីបង្កើតបរិស្ថាន IT ដែលមានស្ថេរភាព សុវត្ថិភាព និងមានប្រសិទ្ធភាពខ្ពស់។',
+  'hero.contactBtn': 'ចាប់ផ្ដើមទំនាក់ទំនង',
+  'hero.expBtn': 'មើលបទពិសោធន៍',
+  'hero.stat1': 'ឆ្នាំបទពិសោធន៍',
+  'hero.stat2Title': 'IT + Electrical',
+  'hero.stat2Desc': 'ជំនាញរួមបញ្ចូល',
+  'hero.stat3Title': 'Enterprise Level',
+  'hero.stat3Desc': 'IT Support',
+  'hero.profileRole': 'IT Support · Systems & Network Technician',
+  'hero.chip1': '⚡ ឆ្លើយតបរហ័ស',
+  'hero.chip2': '🎯 ផ្តោតលើភាពត្រឹមត្រូវ',
+  'hero.chip3': '🛡️ សុវត្ថិភាពជាលក្ខណៈសំខាន់',
 
-          // Skills
-          'skills.title': 'ស្នូលបច្ចេកទេស',
-          'skills.sub': 'ជំនាញក្នុងពិភពពិត — ឧបករណ៍ដែលខ្ញុំប្រើប្រចាំថ្ងៃដើម្បីរក្សាប្រព័ន្ធឱ្យដំណើរការ។',
-          'skills.js': 'JavaScript (មូលដ្ឋាន)',
-          'skills.react': 'React (មូលដ្ឋាន)',
-          'skills.network': 'បណ្តាញ និងការគាំទ្រ IT',
-          'skills.printer': 'ម៉ាស៊ីនបោះពុម្ព និងឧបករណ៍ការិយាល័យ',
-          'skills.electrical': 'ប្រព័ន្ធអគ្គិសនី',
+  // About
+  'about.title': 'អំពីខ្ញុំ',
+  'about.sub': 'ការរួមបញ្ចូលគ្នារវាងជំនាញ IT, Networking និង Electrical System',
+  'about.whoTitle': 'ប្រវត្តិរូបខ្ញុំ',
+  'about.whoText': 'ខ្ញុំឈ្មោះ ឡេង សែ ជាអ្នកជំនាញ IT Support បច្ចុប្បន្នបម្រើការងារនៅ ABA Bank។ ខ្ញុំមានបទពិសោធន៍ធ្វើការនៅក្នុងបរិស្ថានដែលមានសម្ពាធខ្ពស់ដូចជា Casino, Hotel និង Finance ដែលបានបង្កើនសមត្ថភាពក្នុងការគ្រប់គ្រងប្រព័ន្ធ IT ឲ្យមានស្ថេរភាព និងសុវត្ថិភាព។ ខ្ញុំមានចំណាប់អារម្មណ៍ក្នុងការដោះស្រាយបញ្ហាបច្ចេកទេសស្មុគស្មាញ និងធ្វើឲ្យ Infrastructure មានប្រសិទ្ធភាពខ្ពស់។',
+  
+  'about.deliverTitle': 'សេវាកម្មដែលខ្ញុំផ្ដល់',
+  'about.deliver1': '✅ IT Support កម្រិតសហគ្រាស និងការដោះស្រាយបញ្ហាបច្ចេកទេសយ៉ាងមានប្រសិទ្ធភាព',
+  'about.deliver2': '✅ Network Configuration និង Security Hardening (Cisco, MikroTik, TP-Link)',
+  'about.deliver3': '✅ Hardware Maintenance និង Printer Management System',
+  'about.deliver4': '✅ Electrical Installation, Troubleshooting និងការអនុវត្តតាមស្តង់ដារ',
+  
+  'about.focusTitle': 'គោលដៅវិជ្ជាជីវៈ',
+  'about.focusText': 'គោលបំណងរបស់ខ្ញុំគឺបង្កើតប្រព័ន្ធ IT ដែលមានភាពរឹងមាំ សុវត្ថិភាព និងអាចទុកចិត្តបាន ដើម្បីកាត់បន្ថយ Downtime និងបង្កើន Productivity។ ខ្ញុំបន្តសិក្សាបច្ចេកវិទ្យាថ្មីៗ និងអភិវឌ្ឍជំនាញជាបន្តបន្ទាប់ ដើម្បីផ្ដល់ដំណោះស្រាយទំនើបសម្រាប់អង្គភាព។',
 
-          // Experience
-          'exp.title': 'ដំណើរអាជីព',
-          'exp.sub': 'បទពិសោធន៍រីកចម្រើនក្នុង IT Networking និងប្រតិបត្តិការបច្ចេកទេស។',
-          'exp.job1Title': 'IT Support — ABA Bank',
-          'exp.job1Period': '២០២៤ – បច្ចុប្បន្ន',
-          'exp.job1Desc': 'ផ្តល់ការគាំទ្រ IT យ៉ាងទូលំទូលាយសម្រាប់ប្រតិបត្តិការធនាគារសាខា៖ ការបង្កើតរូបភាពកុំព្យូទ័រ ការវិនិច្ឆ័យបណ្តាញ ការថែទាំប្រព័ន្ធសុវត្ថិភាព និងការដោះស្រាយបញ្ហាផ្នែករឹង។ រក្សាបាននូវពិធីសារសុវត្ថិភាពតឹងរឹង និងធានាបាននូវសេវាកម្មធនាគារដែលមិនមានការរំខាននៅក្នុងបរិស្ថានដែលមានការអនុលោមតាមច្បាប់ខ្ពស់។',
-          'exp.job2Title': 'អ្នកបច្ចេកទេស IT — SV World Hotel & Casino',
-          'exp.job2Period': '២០២៣ – ២០២៤',
-          'exp.job2Desc': 'ថែរក្សាហេដ្ឋារចនាសម្ព័ន្ធ IT សំខាន់ៗនៅទូទាំងបន្ទប់ជាង ២០០ និងជាន់ហ្គេម។ កំណត់រចនាសម្ព័ន្ធឧបករណ៍បណ្តាញ អនុវត្តការថែទាំបង្ការ និងដោះស្រាយបញ្ហាបច្ចេកទេសយ៉ាងឆាប់រហ័ស ដើម្បីកាត់បន្ថយពេលវេលារងចាំដែលប៉ះពាល់ដល់ភ្ញៀវ។',
-          'exp.job3Title': 'ជំនួយ IT / អ្នកគ្រប់គ្រង — Kampong Dewa Casino & Resort',
-          'exp.job3Period': '២០២០ – ២០២២',
-          'exp.job3Desc': 'ត្រូវបានដំឡើងពី IT Support ទៅជា Supperbisor ក្នុងរយៈពេលពីរឆ្នាំ។ ដឹកនាំក្រុមអ្នកបច្ចេកទេសបីនាក់ ត្រួតពិនិត្យការធ្វើឱ្យប្រសើរឡើងបណ្តាញ គ្រប់គ្រងប្រតិបត្តិការតុជំនួយ និងធានាបាននូវភាពអាចរកបាននៃប្រព័ន្ធ ២៤/៧ សម្រាប់មុខងារកាស៊ីណូ និងរមណីយដ្ឋាន។',
-          'exp.job4Title': 'ជាងអគ្គិសនី',
-          'exp.job4Period': '២០១៩ – ២០២២',
-          'exp.job4Desc': 'អនុវត្តការដំឡើងអគ្គិសនីពេញវដ្ត ខ្សែភ្លើង និងការថែទាំសម្រាប់គម្រោងលំនៅដ្ឋាន និងពាណិជ្ជកម្ម។ ធានាបាននូវការអនុលោមតាមស្តង់ដារសុវត្ថិភាព និងផ្តល់នូវដំណោះស្រាយថាមពលដែលអាចទុកចិត្តបាន រួមជាមួយនឹងការងារខ្សែកាបដែលទាក់ទងនឹង IT ។',
+  // Skills
+  'skills.title': 'ជំនាញបច្ចេកទេសសំខាន់',
+  'skills.sub': 'ជំនាញដែលប្រើប្រាស់ជាក់ស្តែងក្នុងការងារប្រចាំថ្ងៃ',
+  'skills.js': 'JavaScript (មូលដ្ឋាន)',
+  'skills.react': 'React (មូលដ្ឋាន)',
+  'skills.network': 'Networking & IT Support',
+  'skills.printer': 'Printer & Office Devices',
+  'skills.electrical': 'Electrical Systems',
 
-          // Contact
-          'contact.title': 'ទំនាក់ទំនង',
-          'contact.sub': 'មានគម្រោង បញ្ហាប្រឈមបច្ចេកទេស ឬឱកាសមែនទេ? ខ្ញុំរីករាយនឹងជួយ។',
-          'contact.infoTitle': 'ទំនាក់ទំនងផ្ទាល់',
-          'contact.locationLabel': 'ទីតាំង៖',
-          'contact.location': 'ខេត្តព្រះសីហនុ ប្រទេសកម្ពុជា',
-          'contact.availability': 'អាចរកបានសម្រាប់ការគាំទ្រនៅនឹងកន្លែង និងការពិគ្រោះយោបល់ពីចម្ងាយ',
-          'contact.namePlaceholder': 'ឈ្មោះរបស់អ្នក',
-          'contact.emailPlaceholder': 'អ៊ីមែលរបស់អ្នក',
-          'contact.msgPlaceholder': 'តើខ្ញុំអាចជួយអ្នកយ៉ាងដូចម្តេច?',
-          'contact.sendBtn': 'ផ្ញើសារ',
+  // Experience
+  'exp.title': 'បទពិសោធន៍ការងារ',
+  'exp.sub': 'បទពិសោធន៍អាជីពក្នុងវិស័យ IT និងបច្ចេកវិទ្យា',
+  
+  'exp.job1Title': 'IT Support — ABA Bank',
+  'exp.job1Period': '២០២៤ – បច្ចុប្បន្ន',
+  'exp.job1Desc': 'ផ្ដល់សេវា IT Support សម្រាប់ប្រតិបត្តិការធនាគារ រួមមាន System Deployment (Imaging), Network Troubleshooting, Security Maintenance និង Hardware Support។ ធានាបានស្ថេរភាពប្រព័ន្ធ និងគោរពតាមស្តង់ដារ Security ខ្ពស់។',
 
-          // Footer
-          'footer.rights': 'អ្នកជំនាញផ្នែកជំនួយ IT ។ រក្សាសិទ្ធិគ្រប់យ៉ាង។'
-        }
-      };
+  'exp.job2Title': 'IT Technician — SV World Hotel & Casino',
+  'exp.job2Period': '២០២៣ – ២០២៤',
+  'exp.job2Desc': 'គ្រប់គ្រង និងថែទាំ IT Infrastructure សម្រាប់បន្ទប់ជាង ២០០ និង Gaming Area។ ដំឡើង Network Devices និងដោះស្រាយបញ្ហាបច្ចេកទេសយ៉ាងឆាប់រហ័ស ដើម្បីបន្ថយ Downtime។',
 
+  'exp.job3Title': 'IT Support / Supervisor — Kampong Dewa Casino & Resort',
+  'exp.job3Period': '២០២០ – ២០២២',
+  'exp.job3Desc': 'បានឡើងតំណែងពី IT Support ទៅ Supervisor។ ដឹកនាំក្រុមការងារ គ្រប់គ្រង Helpdesk System និងអនុវត្ត Network Upgrade ដើម្បីធានាបានប្រព័ន្ធដំណើរការ ២៤/៧។',
+
+  'exp.job4Title': 'Electrician',
+  'exp.job4Period': '២០១៩ – ២០២២',
+  'exp.job4Desc': 'អនុវត្ត Electrical Installation, Wiring និង Maintenance សម្រាប់គម្រោងលំនៅដ្ឋាន និងអាជីវកម្ម ដោយគោរពតាមស្តង់ដារ Safety និងគុណភាព។',
+
+  // Contact
+  'contact.title': 'ទំនាក់ទំនងមកខ្ញុំ',
+  'contact.sub': 'ប្រសិនបើអ្នកមានគម្រោង ឬបញ្ហាបច្ចេកទេស ខ្ញុំរីករាយក្នុងការជួយ',
+  'contact.infoTitle': 'ព័ត៌មានទំនាក់ទំនង',
+  'contact.locationLabel': 'ទីតាំង៖',
+  'contact.location': 'ប្រទេសកម្ពុជា',
+  'contact.availability': 'អាចធ្វើការនៅនឹងកន្លែង និង Remote Support',
+  'contact.namePlaceholder': 'ឈ្មោះ',
+  'contact.emailPlaceholder': 'អ៊ីមែល',
+  'contact.msgPlaceholder': 'សូមសរសេរសារ...',
+  'contact.sendBtn': 'ផ្ញើសារ',
+
+  // Footer
+  'footer.rights': 'អ្នកជំនាញ IT Support | រក្សាសិទ្ធិគ្រប់យ៉ាង'
+}
       let currentLang = 'en';
 
       function applyLanguage(lang) {
