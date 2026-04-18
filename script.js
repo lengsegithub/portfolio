@@ -187,3 +187,14 @@ document.addEventListener("keydown", (e) => {
     menuBtn.classList.remove("active");
   }
 });
+// =========================
+// PARALLAX EFFECT (HERO IMAGE)
+// =========================
+const profile = document.querySelector(".profile");
+
+window.addEventListener("mousemove", (e)=>{
+  const x = (window.innerWidth/2 - e.clientX) / 30;
+  const y = (window.innerHeight/2 - e.clientY) / 30;
+
+  profile.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+});
