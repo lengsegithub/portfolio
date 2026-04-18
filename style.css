@@ -28,13 +28,13 @@ html {
 }
 
 body {
-  font-family: Inter, system-ui, Arial, sans-serif;
+  font-family: 'Kantumruy Pro', 'Noto Sans Khmer', Inter, system-ui, Arial, sans-serif;
   background: 
     radial-gradient(900px 500px at 15% 10%, rgba(79, 139, 255, 0.25), transparent 60%),
     radial-gradient(700px 400px at 85% 30%, rgba(124, 58, 237, 0.18), transparent 55%),
     var(--bg);
   color: var(--text);
-  line-height: 1.65;
+  line-height: 1.75; 
   position: relative;
   overflow-x: hidden;
 }
