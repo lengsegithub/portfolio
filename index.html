@@ -533,25 +533,47 @@
 }
       let currentLang = 'en';
 
-    function applyLanguage(lang) {
+function applyLanguage(lang) {
+  // Set language attribute
   document.documentElement.lang = lang;
 
-  // 🔥 Force font refresh (important)
+  // 🔥 Font switch
   document.body.style.fontFamily = (lang === 'km')
     ? "'Noto Sans Khmer', 'Kantumruy Pro', sans-serif"
     : "Inter, system-ui, Arial, sans-serif";
 
+  // 🔥 Text translation
   const elements = document.querySelectorAll('[data-i18n]');
-        const elements = document.querySelectorAll('[data-i18n]');
-        elements.forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (translations[lang] && translations[lang][key]) {
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-              el.placeholder = translations[lang][key];
-            } else {
-              el.textContent = translations[lang][key];
-            }
-          }
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  // 🔥 Placeholder translation
+  const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+  placeholders.forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
+    }
+  });
+
+  // 🔥 Button label update
+  const langLabel = document.getElementById('langLabel');
+  if (lang === 'en') {
+    langLabel.textContent = 'ភាសាខ្មែរ';
+  } else {
+    langLabel.textContent = 'English';
+  }
+
+  // 🔥 Save language
+  localStorage.setItem('preferredLang', lang);
+
+  // Update current language
+  currentLang = lang;
+}
         });
 
         // Handle placeholder attributes separately
