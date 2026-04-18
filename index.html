@@ -531,91 +531,82 @@
   // Footer
   'footer.rights': 'អ្នកជំនាញ IT Support | រក្សាសិទ្ធិគ្រប់យ៉ាង'
 }
-      let currentLang = 'en';
+    let currentLang = 'en';
 
 function applyLanguage(lang) {
-  // Set language attribute
+  // 1. Set HTML language
   document.documentElement.lang = lang;
 
-  // 🔥 Font switch
+  // 2. Font switch
   document.body.style.fontFamily = (lang === 'km')
     ? "'Noto Sans Khmer', 'Kantumruy Pro', sans-serif"
     : "Inter, system-ui, Arial, sans-serif";
 
-  // 🔥 Text translation
+  // 3. Text translation
   const elements = document.querySelectorAll('[data-i18n]');
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n');
+
     if (translations[lang] && translations[lang][key]) {
       el.textContent = translations[lang][key];
     }
   });
 
-  // 🔥 Placeholder translation
+  // 4. Placeholder translation
   const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
   placeholders.forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
+
     if (translations[lang] && translations[lang][key]) {
       el.placeholder = translations[lang][key];
     }
   });
 
-  // 🔥 Button label update
+  // 5. Update button label
   const langLabel = document.getElementById('langLabel');
-  if (lang === 'en') {
-    langLabel.textContent = 'ភាសាខ្មែរ';
-  } else {
-    langLabel.textContent = 'English';
+  if (langLabel) {
+    langLabel.textContent = (lang === 'en') ? 'ភាសាខ្មែរ' : 'English';
   }
 
-  // 🔥 Save language
+  // 6. Save language
   localStorage.setItem('preferredLang', lang);
 
-  // Update current language
+  // 7. Update current language
   currentLang = lang;
 }
-        });
 
-        // Handle placeholder attributes separately
-        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-          const key = el.getAttribute('data-i18n-placeholder');
-          if (translations[lang] && translations[lang][key]) {
-            el.placeholder = translations[lang][key];
-          }
-        });
 
-        // Update toggle button label
-        const langLabel = document.getElementById('langLabel');
-        if (lang === 'en') {
-          langLabel.textContent = 'ភាសាខ្មែរ';
-        } else {
-          langLabel.textContent = 'English';
-        }
+// ==========================
+// TOGGLE LANGUAGE
+// ==========================
+function toggleLanguage() {
+  const newLang = (currentLang === 'en') ? 'km' : 'en';
+  applyLanguage(newLang);
+}
 
-        // Store preference
-        localStorage.setItem('preferredLang', lang);
-        currentLang = lang;
-      }
 
-      // Toggle function
-      function toggleLanguage() {
-        const newLang = currentLang === 'en' ? 'km' : 'en';
-        applyLanguage(newLang);
-      }
+// ==========================
+// INIT APP
+// ==========================
+document.addEventListener('DOMContentLoaded', () => {
 
-      // Initialize
-      document.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('preferredLang') || 'en';
-        applyLanguage(savedLang);
+  // Load saved language
+  const savedLang = localStorage.getItem('preferredLang') || 'en';
+  applyLanguage(savedLang);
 
-        const toggleBtn = document.getElementById('langToggle');
-        if (toggleBtn) {
-          toggleBtn.addEventListener('click', toggleLanguage);
-        }
+  // Button click
+  const toggleBtn = document.getElementById('langToggle');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', toggleLanguage);
+  }
 
-        // Update year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-      });
+  // Footer year
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+});
     })();
   </script>
 </body>
