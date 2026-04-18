@@ -38,6 +38,14 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+/* =========================
+   KHMER FONT FIX
+========================= */
+html:lang(km) body {
+  font-family: 'Noto Sans Khmer', 'Kantumruy Pro', sans-serif;
+  line-height: 1.85;
+  letter-spacing: 0.2px;
+}
 
 /* Animated gradient orb */
 body::before {
